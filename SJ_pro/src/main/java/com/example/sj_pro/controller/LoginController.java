@@ -23,6 +23,7 @@ public class LoginController {
     @RequestMapping("/login")
     @ResponseBody
     public String login(){
+
         System.out.println("欢迎登录，请验证账号和密码");
         return "222";
     }
