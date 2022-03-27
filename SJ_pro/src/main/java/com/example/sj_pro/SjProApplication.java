@@ -9,4 +9,5 @@ public class SjProApplication {
         SpringApplication.run(SjProApplication.class, args);
     }
 
+
 }
