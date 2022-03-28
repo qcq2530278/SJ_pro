@@ -3,6 +3,7 @@ package com.example.sj_pro.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
@@ -22,9 +23,9 @@ public class LoginController {
      */
     @RequestMapping("/login")
     @ResponseBody
-    public String login(){
+    public String login(String username,String pwd){
 
-        System.out.println("欢迎登录，请验证账号和密码");
+        System.out.println("username="+username+"-----pwd="+pwd);
         return "222";
     }
 }
