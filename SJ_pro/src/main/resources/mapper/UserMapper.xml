@@ -9,8 +9,10 @@
     <result column="sex" jdbcType="VARCHAR" property="sex" />
     <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
   </resultMap>
- <select id="checkUser" parameterType="String" resultType="java.util.Map">
-    select * from user where account = #{account}
- </select>
-
+    <select id="checkUser" parameterType="String" resultType="java.util.Map">
+        select * from user where account = #{account}
+    </select>
+    <insert id="addUser" parameterType="com.example.sj_pro.model.User">
+        insert into user values(#{name},#{account},#{pwd},#{sex},#{create_time})
+    </insert>
 </mapper>

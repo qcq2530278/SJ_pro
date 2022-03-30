@@ -12,4 +12,10 @@ public interface UserMapper {
      * @return
      */
     User checkUser(String account);
+
+    /**
+     * 用户注册
+     * @param user
+     */
+    void addUser(User user);
 }

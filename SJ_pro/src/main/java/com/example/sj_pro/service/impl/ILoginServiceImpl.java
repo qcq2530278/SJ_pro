@@ -16,4 +16,9 @@ public class ILoginServiceImpl implements ILoginService {
     public User checkUser(String account) {
         return userMapper.checkUser(account);
     }
+
+    @Override
+    public void addUser(User user) {
+        userMapper.addUser(user);
+    }
 }

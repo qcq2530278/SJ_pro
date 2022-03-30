@@ -34,4 +34,14 @@ public class LoginController {
         System.out.println(user.getName());
         return "222";
     }
+
+    /**
+     * 跳转注册页面
+     * @return
+     */
+    @GetMapping("/toResetPage")
+    public String toRest(){
+        System.out.println("跳转注册页面");
+        return "/resetPage";
+    }
 }

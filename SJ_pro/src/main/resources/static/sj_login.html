@@ -39,8 +39,15 @@
     $(function (){
         $("#sub").on("click",function (){
             login();
+        }),
+        $("#reset").on("click",function(){
+            toReset();
         })
     })
+
+    /**
+     * 登录验证
+     */
     function login(){
         alert(111);
         $.ajax({
@@ -57,5 +64,14 @@
             }
         )
     }
+
+    /**
+     * 跳转注册
+     */
+    function toReset(){
+        alert(222);
+        window.location.href="/toResetPage";
+    }
+
 </script>
 </body></html>
