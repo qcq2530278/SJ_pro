@@ -31,7 +31,7 @@ public class LoginController {
     @ResponseBody
     public String login(String username,String pwd){
         User user = iLoginService.checkUser(username);
-        System.out.println(user.getName());
+        System.out.println(username);
         return "222";
     }
 
@@ -40,8 +40,38 @@ public class LoginController {
      * @return
      */
     @GetMapping("/toResetPage")
-    public String toRest(){
+    public String toReset(){
         System.out.println("跳转注册页面");
         return "/resetPage";
+    }
+
+    /**
+     * 注册验证
+     * @return
+     */
+    @RequestMapping("/resetCheck")
+    @ResponseBody
+    public String resetCheck(String username){
+        System.out.println(username);
+        User user = iLoginService.checkUser(username);
+        System.out.println(user);
+        if(user==null){
+            return "ok";
+        }else{
+            return "fail";
+        }
+    }
+
+    /**
+     * 用户注册
+     * @param user
+     * @return
+     */
+    @RequestMapping("/reset")
+    @ResponseBody
+    public String reset(User user){
+        System.out.println(user.getPwd());
+        iLoginService.addUser(user);
+        return "ok";
     }
 }
