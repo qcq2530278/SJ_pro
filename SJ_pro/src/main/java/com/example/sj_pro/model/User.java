@@ -13,7 +13,7 @@ public class User {
 
     private String sex;
 
-    private Date createTime;
+    private Date create_time;
 
     public Integer getId() {
         return id;
@@ -55,11 +55,11 @@ public class User {
         this.sex = sex == null ? null : sex.trim();
     }
 
-    public Date getCreateTime() {
-        return createTime;
+    public Date getCreate_time() {
+        return create_time;
     }
 
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
+    public void setCreate_time(Date create_time) {
+        this.create_time = create_time;
     }
 }

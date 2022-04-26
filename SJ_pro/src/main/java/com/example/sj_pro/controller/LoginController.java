@@ -4,9 +4,8 @@ import com.example.sj_pro.model.User;
 import com.example.sj_pro.service.ILoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class LoginController {
@@ -42,7 +41,7 @@ public class LoginController {
     @GetMapping("/toResetPage")
     public String toReset(){
         System.out.println("跳转注册页面");
-        return "/resetPage";
+        return "/reset";
     }
 
     /**
@@ -51,27 +50,13 @@ public class LoginController {
      */
     @RequestMapping("/resetCheck")
     @ResponseBody
-    public String resetCheck(String username){
-        System.out.println(username);
-        User user = iLoginService.checkUser(username);
-        System.out.println(user);
+    public String resetCheck(String name,String account,String sex,String pwd){
+        System.out.println("account="+account+" name="+name+" sex="+sex+" pwd="+pwd);
+        User user = iLoginService.checkUser(account);
         if(user==null){
             return "ok";
         }else{
             return "fail";
         }
-    }
-
-    /**
-     * 用户注册
-     * @param user
-     * @return
-     */
-    @RequestMapping("/reset")
-    @ResponseBody
-    public String reset(User user){
-        System.out.println(user.getPwd());
-        iLoginService.addUser(user);
-        return "ok";
     }
 }
