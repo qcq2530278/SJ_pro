@@ -32,8 +32,15 @@ public class LoginController {
     @ResponseBody
     public String login(String username,String pwd){
         User user = iLoginService.checkUser(username);
-        System.out.println(username);
-        return "222";
+        if(user==null){
+            return "error1";
+        }else{
+            if(user.getPwd().equals(pwd)){
+                return "homePage";
+            }else{
+                return "error2";
+            }
+        }
     }
 
     /**

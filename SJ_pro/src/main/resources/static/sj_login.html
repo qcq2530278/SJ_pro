@@ -49,17 +49,22 @@
      * 登录验证
      */
     function login(){
-        alert(111);
         $.ajax({
                 type:"post",
                 url:"/login",
-                dataType:"json",
+                dataType:"text",
                 data:{
                     "username":$("#username").val(),
                     "pwd":$("#pwd").val()
                 },
                 success:function(data){
-                    alert("登录成功"+data);
+                    if(data=="error1"){
+                        alert("该用户不存在，请检查账号是否正确！");
+                    }else if(data=="error2"){
+                        alert("密码不正确，请重新输入！");
+                    }else if(data=="homePage"){
+                        window.location.href="/homePage.html";
+                    }
                 }
             }
         )
