@@ -57,7 +57,7 @@
         $.ajax({
                 type:"post",
                 url:"/resetCheck",
-                dataType:"json",
+                dataType:"text",
                 data:{
                     "account":$("#username").val(),
                     "name":$("#name").val(),
@@ -65,10 +65,14 @@
                     "pwd":$("#pwd").val()
                 },
                 success:function(data){
-                    alert("注册成功"+data);
+                    if(data=="ok"){
+                        alert("注册成功！");
+                    }else if(data=="fail"){
+                        alert("该账号已注册！");
+                    }
                 },
-                error:function (data1){
-                    alert("注册失败");
+                error:function (data){
+                    alert("注册失败"+data);
                 }
             }
         )

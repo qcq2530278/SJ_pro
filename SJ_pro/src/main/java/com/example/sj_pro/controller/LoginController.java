@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
+
 @Controller
 public class LoginController {
 
@@ -51,9 +53,15 @@ public class LoginController {
     @RequestMapping("/resetCheck")
     @ResponseBody
     public String resetCheck(String name,String account,String sex,String pwd){
-        System.out.println("account="+account+" name="+name+" sex="+sex+" pwd="+pwd);
         User user = iLoginService.checkUser(account);
+        User user1 = new User();
+        user1.setAccount(account);
+        user1.setName(name);
+        user1.setSex(sex);
+        user1.setPwd(pwd);
+        user1.setCreate_time(new Date());
         if(user==null){
+            iLoginService.addUser(user1);
             return "ok";
         }else{
             return "fail";
