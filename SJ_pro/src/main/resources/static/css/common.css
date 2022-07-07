@@ -1,5 +1,98 @@
-login_top{
-    width: auto;
-    height: 50px;
-    background: #42b983;
+body{
+    background-image:url('http://static.runoob.com/images/mix/paper.gif');
+    background-color:#cccccc;
+}
+h1{
+    color:black;
+    text-align:center;
+}
+p{
+    font-family:"Times New Roman";
+    font-size:20px;
+}
+.content{
+    max-width: 1300px;
+    margin: auto;
+    background: white;
+    padding: 10px;
+}
+#mySidenav a {
+    position: absolute;
+    left: -80px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#about {
+    top: 300px;
+    background-color: #4CAF50;
+}
+
+#blog {
+    top: 360px;
+    background-color: #2196F3;
+}
+
+#projects {
+    top: 420px;
+    background-color: #f44336;
+}
+
+#contact {
+    top: 480px;
+    background-color: #555
+}
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    position:fixed;
+    top:10px;
+    right:8px;
+    width: 5%;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+.active {
+    background-color: #4CAF50;
 }

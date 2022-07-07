@@ -1,38 +1,241 @@
-<html class="no-js" lang="zh-CN"><head><script type="text/javascript">
-    //检查浏览器版本
-    var Sys = {};
-    var ua = navigator.userAgent.toLowerCase();
-    var s;
-    (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
-        (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
-            (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
-                (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
-                    (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        //检查浏览器版本
+        var Sys = {};
+        var ua = navigator.userAgent.toLowerCase();
+        var s;
+        (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+            (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+                (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                    (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                        (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
 
-    //低于IE9以下进行跳转
-    if (Sys.ie < 9) {
-        //window.location.href = "sorry-for-ie.htm";
-    }
-</script>
+        //低于IE9以下进行跳转
+        if (Sys.ie < 9) {
+            //window.location.href = "sorry-for-ie.htm";
+        }
+    </script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- page title -->
-    <title>商机网主页</title>
+    <title>XX网主页</title>
     <!-- styles -->
     <link href="/css/common.css" rel="stylesheet" type="text/css">
+    <style>
+        body{
+            background-image:url('http://static.runoob.com/images/mix/paper.gif');
+            background-color:#cccccc;
+        }
+        h1{
+            color:black;
+            text-align:center;
+        }
+        p{
+            font-family:"Times New Roman";
+            font-size:20px;
+        }
+        #mySidenav a {
+            position: absolute;
+            left: -80px;
+            transition: 0.3s;
+            padding: 15px;
+            width: 100px;
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+            border-radius: 0 5px 5px 0;
+        }
+
+        #mySidenav a:hover {
+            left: 0;
+        }
+
+        #about {
+            top: 300px;
+            background-color: #4CAF50;
+        }
+
+        #blog {
+            top: 360px;
+            background-color: #2196F3;
+        }
+
+        #projects {
+            top: 420px;
+            background-color: #f44336;
+        }
+
+        #contact {
+            top: 480px;
+            background-color: #555
+        }
+
+        .card {
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+            transition: 0.3s;
+            border-radius: 5px;
+            position:fixed;
+            top:6px;
+            right:8px;
+            width: 6%;
+        }
+
+        .card:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        }
+
+        img {
+            border-radius: 5px 5px 0 0;
+        }
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        li {
+            float: left;
+        }
+
+        li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        li a:hover {
+            background-color: #111;
+        }
+        .active {
+            background-color: #4CAF50;
+        }
+        .header {
+            background-color: #f1f1f1;
+            padding: 1px;
+            text-align: center;
+        }
+        /* 创建三个相等的列 */
+        .column {
+            float: left;
+            width: 33.33%;
+        }
+        /* 左右两侧宽度 */
+        .column.side {
+            width: 370px;
+            height: auto;
+            border: 1px solid #555555;
+        }
+
+        /* 中间区域宽度 */
+        .column.middle {
+            width: 730px;
+            height: 300px;
+            border: 1px solid #555555;
+        }
+        /* 响应式布局 - 小于 600 px 时改为上下布局 */
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+            }
+        }
+        h2{
+            text-align: center;
+        }
+        #div2
+        {
+            margin-top: -20.5px;
+            width:100px;
+            height:100px;
+            background:red;
+            position:relative;
+            animation:myfirst 5s linear 2s infinite alternate;
+            /* Firefox: */
+            -moz-animation:myfirst 5s linear 2s infinite alternate;
+            /* Safari and Chrome: */
+            -webkit-animation:myfirst 5s linear 2s infinite alternate;
+            /* Opera: */
+            -o-animation:myfirst 5s linear 2s infinite alternate;
+        }
+
+        @keyframes myfirst
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:630px; top:0px;}
+            50%  {background:blue; left:630px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+
+        @-moz-keyframes myfirst /* Firefox */
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:630px; top:0px;}
+            50%  {background:blue; left:630px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+
+        @-webkit-keyframes myfirst /* Safari and Chrome */
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:630px; top:0px;}
+            50%  {background:blue; left:630px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+
+        @-o-keyframes myfirst /* Opera */
+        {
+            0%   {background:red; left:0px; top:0px;}
+            25%  {background:yellow; left:630px; top:0px;}
+            50%  {background:blue; left:630px; top:200px;}
+            75%  {background:green; left:0px; top:200px;}
+            100% {background:red; left:0px; top:0px;}
+        }
+    </style>
 </head>
 <body>
-    <div style="border-color: black;width: 100%;height: 50px;background-color: lightgreen;">
+    <div>
         <div style="position: absolute;">
-            <img src="/static/images/logo.jpg" style="width: 50px;height: 50px;">
-            <img src="/static/images/person1.png" style="width: 62px;height: 50px;margin-left: 1361px;">
+            <div class="card">
+                <img src="https://static.runoob.com/images/mix/img_avatar.png" alt="Avatar" style="width:100%">
+            </div>
         </div>
-        <div style="position: relative;margin-left: 55px;">
-            <h1 style="color: darkred">欢迎访问商机网</h1>
+        <div class="header">
+            <h1>欢迎访问XX网</h1>
         </div>
-    </div>
-    <div style="border: 1px; color: black;background-color: crimson;width: 100%;height: auto">
-        <hr size="1" color="#987cb9">
+        <div id="mySidenav" class="sidenav">
+            <a href="#" id="about">About</a>
+            <a href="#" id="blog">Blog</a>
+            <a href="#" id="projects">Projects</a>
+            <a href="#" id="contact">Contact</a>
+        </div>
+        <ul>
+            <li><a class="active" href="#home">主页</a></li>
+            <li><a href="#news">新闻</a></li>
+            <li><a href="#contact">联系</a></li>
+            <li><a href="#about">关于</a></li>
+        </ul>
+        <div class="column side">
+            <h2>快捷操作</h2>
+        </div>
+
+        <div class="column middle">
+            <div id="div2">
+                <h2>新闻动态</h2>
+            </div>
+        </div>
+
+        <div class="column side">
+            <h2>快捷入口</h2>
+        </div>
     </div>
 
 
@@ -41,4 +244,5 @@
 <script type="text/javascript">
 
 </script>
-</body></html>
+</body>
+</html>
