@@ -77,7 +77,7 @@
             transition: 0.3s;
             border-radius: 5px;
             position:fixed;
-            top:6px;
+            top:4px;
             right:8px;
             width: 6%;
         }
@@ -117,27 +117,29 @@
             background-color: #4CAF50;
         }
         .header {
-            background-color: #f1f1f1;
             padding: 1px;
             text-align: center;
         }
         /* 创建三个相等的列 */
         .column {
             float: left;
-            width: 33.33%;
+            width: 33%;
         }
         /* 左右两侧宽度 */
         .column.side {
-            width: 370px;
+            width: 365px;
             height: auto;
-            border: 1px solid #555555;
+            padding: 15px;
+        }
+        .column.right{
+            float:right;
         }
 
         /* 中间区域宽度 */
         .column.middle {
-            width: 730px;
+            width: 731px;
             height: 300px;
-            border: 1px solid #555555;
+            padding: 15px;
         }
         /* 响应式布局 - 小于 600 px 时改为上下布局 */
         @media screen and (max-width: 600px) {
@@ -146,7 +148,7 @@
             }
         }
         h2{
-            text-align: center;
+            text-align: left;
         }
         #div2
         {
@@ -199,6 +201,94 @@
             75%  {background:green; left:0px; top:200px;}
             100% {background:red; left:0px; top:0px;}
         }
+        #div3
+        {
+            margin-top: 200px;
+            width:100px;
+            height:100px;
+            position:relative;
+            animation:myfirst 5s linear 2s infinite alternate;
+            /* Firefox: */
+            -moz-animation:myfirst 5s linear 2s infinite alternate;
+            /* Safari and Chrome: */
+            -webkit-animation:myfirst 5s linear 2s infinite alternate;
+            /* Opera: */
+            -o-animation:myfirst 5s linear 2s infinite alternate;
+        }
+        #div4
+        {
+            margin-top: 200px;
+            width:100px;
+            height:100px;
+            position:relative;
+            animation:myfirst 5s linear 2s infinite alternate;
+            /* Firefox: */
+            -moz-animation:myfirst 5s linear 2s infinite alternate;
+            /* Safari and Chrome: */
+            -webkit-animation:myfirst 5s linear 2s infinite alternate;
+            /* Opera: */
+            -o-animation:myfirst 5s linear 2s infinite alternate;
+        }
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 25px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 1px -1px;
+            cursor: pointer;
+        }
+        .div1 {
+            width: 370px;
+            height: 20px;
+            border: none;
+            text-align: left;
+            margin-top: -12px;
+            padding-left: 12px;
+        }
+        .divbtn{
+            text-align: center;
+            margin-top: 2px;
+        }
+        <!-- 响应式图片相册 -->
+        .img {
+            border: none;
+        }
+
+        .img:hover {
+            border: none;
+        }
+
+        .img img {
+            width: 100%;
+            height: 100px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .responsive {
+            padding: 10px 10px;
+            float: left;
+            width: 99.99%;
+        }
+
+        @media only screen and (max-width: 700px){
+            .responsive {
+                width: 49.99999%;
+                margin: 6px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px){
+            .responsive {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -224,17 +314,63 @@
             <li><a href="#about">关于</a></li>
         </ul>
         <div class="column side">
-            <h2>快捷操作</h2>
+            <div class="div1">
+                <span><b>员工自助平台</b></span>
+            </div>
+            <div class="divbtn">
+                <a href="#" class="button">待办事项</a>
+                <a href="#" class="button">我的单据</a>
+                <a href="#" class="button">已批单据</a>
+                <a href="#" class="button">流程入口</a>
+                <a href="#" class="button">我的考勤</a>
+                <a href="#" class="button">我的邮件</a>
+                <a href="#" class="button">福利补贴</a>
+                <a href="#" class="button">会议预定</a>
+                <a href="#" class="button">绩效考核</a>
+            </div>
         </div>
 
         <div class="column middle">
             <div id="div2">
                 <h2>新闻动态</h2>
             </div>
+            <div id="div3">
+                <h2>新闻动态</h2>
+            </div>
+            <div id="div4">
+                <h2>新闻动态</h2>
+            </div>
         </div>
 
-        <div class="column side">
-            <h2>快捷入口</h2>
+        <div class="column side right">
+            <div class="responsive">
+                <div class="img">
+                    <a href="#">
+                        <img src="http://www.runoob.com/wp-content/uploads/2016/04/img_fjords.jpg" alt="Trolltunga Norway" width="300" height="200">
+                    </a>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="img">
+                    <a href="#">
+                        <img src="http://www.runoob.com/wp-content/uploads/2016/04/img_forest.jpg" alt="Forest" width="600" height="400">
+                    </a>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="img">
+                    <a href="#">
+                        <img src="http://www.runoob.com/wp-content/uploads/2016/04/img_lights.jpg" alt="Northern Lights" width="600" height="400">
+                    </a>
+                </div>
+            </div>
+            <div class="responsive">
+                <div class="img">
+                    <a href="#">
+                        <img src="http://www.runoob.com/wp-content/uploads/2016/04/img_mountains.jpg" alt="Mountains" width="600" height="400">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
